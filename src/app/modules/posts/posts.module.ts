@@ -8,6 +8,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { AvatarModule } from 'primeng/avatar';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
 
 
 
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     PostsRoutingModule,
     MenubarModule,
     AvatarModule,
-    FormsModule
+    FormsModule,
+    ToastModule
   ]
 })
 export class PostsModule { }
