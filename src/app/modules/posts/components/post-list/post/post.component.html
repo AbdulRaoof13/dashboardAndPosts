@@ -1,0 +1,28 @@
+<div class="bg-blue-700 shadow-lg rounded-lg" >
+    <div class="px-6 py-5 my-3">
+        <div class="flex items-start">
+            <!-- Card content -->
+            <div class="flex-grow truncate">
+                <!-- Card header -->
+                <div class="w-full sm:flex justify-between items-center mb-3">
+                    <!-- Title -->
+                    <h2 class="text-2xl leading-snug font-extrabold text-gray-50 truncate mb-1 sm:mb-0">
+                        {{post.title}}
+                    </h2>
+                </div>
+                <!-- Card body -->
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between md:whitespace-normal">
+                    <!-- Paragraph -->
+                    <div class="max-w-md text-indigo-100">
+                        <p class="mb-2 truncate">{{post.body}}</p>
+                    </div>
+                    <!-- More link -->
+                    <a class="flex-shrink-0 flex items-center justify-center text-blue-700 w-10 h-10 rounded-full bg-gradient-to-b from-indigo-50 to-indigo-100 hover:from-white hover:to-indigo-50 focus:outline-none focus-visible:from-white focus-visible:to-white transition duration-150 ml-2"
+                        routerLink="/posts/post/{{post.id}}">
+                        <span class="block font-bold"><span class="sr-only">Read more</span> -></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

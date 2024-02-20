@@ -1,0 +1,35 @@
+<section class="flex flex-col bg-gray-30 p-4">
+    <p-toast></p-toast>
+    <div class="flex flex-col md:flex-row md:justify-center mb-2">
+        <!-- <div>
+            <h2 class="text-4xl text-indigo-600 mb-2 md:mb-0">
+                Posts ({{posts.length}})
+            </h2>
+        </div> -->
+
+        <div>
+            <input name="searchPost" [(ngModel)]="searchPost"
+                class="text-m text-gray-800 bg-white border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm placeholder-gray-400 focus:ring-0 w-full"
+                type="search" placeholder="Search Post" />
+        </div>
+    </div>
+
+    <div class="h-full" *ngIf="!loading">
+        @for (post of posts | search: searchPost; track post.id) {
+            <ng-container *ngIf="$index>=first && $index<first+rows">
+                <app-post [post]="post"></app-post>
+            </ng-container>
+        }
+        @empty {
+            <div class="text-lg text-center">
+                <h3>No Posts Found</h3>
+            </div>
+        }
+
+        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="lengthOgPosts(posts | search: searchPost)" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+    </div>
+    <div class="w-full" *ngIf="loading">
+        <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
+    </div>
+
+</section>
