@@ -54,7 +54,7 @@ export class PostDetailsComponent implements OnInit {
   }
 
   getUserData(){
-    this.postService.getUserData(this.postId).subscribe({
+    this.postService.getUserData(this.post.userId).subscribe({
       next:(res:any)=>{
         this.user = res[0];
         this.loading = false;

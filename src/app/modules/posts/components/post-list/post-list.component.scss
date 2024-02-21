@@ -1,0 +1,26 @@
+::ng-deep.p-paginator {
+    color: white !important;
+    background: inherit !important;
+    .p-paginator-current {
+        color: white;
+    }
+}
+
+::ng-deep.p-dropdown {
+    color: white;
+    background: inherit;
+    .p-dropdown-label {
+        color: white;
+    }
+    div {
+        color: white;
+    }
+}
+
+input[type=search] {
+    background: #334155;
+}
+
+::ng-deep.p-progressbar-indeterminate {
+    background-color: rgb(0, 255, 221);
+}

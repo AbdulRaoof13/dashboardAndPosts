@@ -1,4 +1,4 @@
-<section class="flex flex-col bg-gray-30 p-4">
+<section class="flex flex-col bg-gray-30 h-full p-4 bg-slate-900">
     <p-toast></p-toast>
     <div class="flex flex-col md:flex-row md:justify-center mb-2">
         <!-- <div>
@@ -7,29 +7,44 @@
             </h2>
         </div> -->
 
-        <div>
+        <div class="relative">
+            <i class="fas fa-search absolute top-2.5 left-2.5 text-white"></i>
             <input name="searchPost" [(ngModel)]="searchPost"
-                class="text-m text-gray-800 bg-white border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm placeholder-gray-400 focus:ring-0 w-full"
+                class="pl-8 text-m text-white bg-slate-700 border rounded leading-5 py-2 px-3 border-gray-200 hover:border-gray-300 focus:border-teal-300 shadow-sm placeholder-gray-300 focus:ring-0 w-full"
                 type="search" placeholder="Search Post" />
         </div>
     </div>
 
-    <div class="h-full" *ngIf="!loading">
-        @for (post of posts | search: searchPost; track post.id) {
-            <ng-container *ngIf="$index>=first && $index<first+rows">
-                <app-post [post]="post"></app-post>
-            </ng-container>
-        }
-        @empty {
-            <div class="text-lg text-center">
-                <h3>No Posts Found</h3>
-            </div>
-        }
-
-        <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="lengthOgPosts(posts | search: searchPost)" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
-    </div>
-    <div class="w-full" *ngIf="loading">
+    <div class="w-full pt-4 pb-4" *ngIf="loading">
         <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
     </div>
+
+    <div class="h-full" *ngIf="!loading">
+        @for (post of posts | search: searchPost; track post.id) {
+        <ng-container *ngIf="$index>=first && $index<first+rows">
+            <app-post [post]="post"></app-post>
+        </ng-container>
+        }
+        @empty {
+        <div class="text-lg text-center text-white p-4">
+            <h3>No Posts Found</h3>
+        </div>
+        }
+
+
+        <div class="md:flex justify-center hidden">
+            <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+            [totalRecords]="lengthOgPosts(posts | search: searchPost)"
+            [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+        </div>
+        <div class=" w-full justify-center md:hidden visible">
+            <!-- <span class="mx-1 text-color">Items per page: </span> -->
+            <!-- <p-dropdown [options]="[10, 20, 30]" optionLabel="label" optionValue="value" [(ngModel)]="rows" (ngModelChange)="first = 0"></p-dropdown> -->
+            <p-paginator [first]="first" [rows]="rows" [totalRecords]="lengthOgPosts(posts | search: searchPost)" (onPageChange)="onPageChange($event)" [showCurrentPageReport]="true"
+                currentPageReportTemplate="{first} - {last} of {totalRecords}" [showPageLinks]="false" [showFirstLastIcon]="false" ></p-paginator>
+        </div>
+        
+    </div>
+    
 
 </section>
