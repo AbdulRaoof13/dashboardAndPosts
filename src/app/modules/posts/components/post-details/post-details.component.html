@@ -1,10 +1,11 @@
 <div class="relative font-inter antialiased">
-    <div class="w-full pt-4 pb-4" *ngIf="loading">
-        <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
-    </div>
+    
 
-    <main class="relative flex flex-col justify-center overflow-hidden" *ngIf="!loading">
-        <div class=" px-4 md:px-6">
+    <main class="relative flex flex-col justify-center overflow-hidden" >
+        <div class="w-full pt-4 pb-4" *ngIf="loading">
+            <p-progressBar mode="indeterminate" [style]="{ height: '6px' }"></p-progressBar>
+        </div>
+        <div class=" px-4 md:px-6" *ngIf="!loading">
             <div class="flex justify-center flex-col items-center">
 
                 <article class="w-11/12 bg-slate-700 shadow-lg rounded-lg p-4">
@@ -13,7 +14,7 @@
                     </div>
 
                     <header class="mb-4 text-center">
-                        <h1 class="text-4xl font-extrabold text-gray-50 mb-4">{{post.title}}</h1>
+                        <h1 class="text-4xl font-extrabold text-gray-50 mb-4">{{post.title | titlecase}}</h1>
                         <span class="text-gray-50">By {{user?.name}}</span>
                     </header>
                     <div
@@ -22,15 +23,11 @@
                             {{post.body}}
                         </p>
                     </div>
-
-
                 </article>
                 <div class="w-11/12 p-4">
                     <div class="mt-4 mb-4 text-left">
                         <h2 class="text-2xl font-extrabold text-teal-400">Comments {{comments.length? '('+ comments.length +')': '(0)'}}</h2>
                     </div>
-
-
                 </div>
 
 

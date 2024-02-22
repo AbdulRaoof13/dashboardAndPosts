@@ -1,1 +1,38 @@
-<p>home works!</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pt-4 pb-4">
+    @for(block of topInfoBlocks; track block.heading) {
+    <app-info-block [data]="block" class="w-full"></app-info-block>
+    }
+</div>
+
+<div class="p-4 bg-slate-800 rounded-lg">
+    <div class="flex md:justify-between md:flex-row flex-col-reverse w-full items-center">
+        <div>
+            <h3 class="text-slate-200">Github Issues Summary</h3>
+        </div>
+        <div class="">
+            <button type="button" class="text-white focus:outline-none font-medium rounded-full text-xs px-4 py-2 mr-2">Last Week</button>
+            <button type="button" class="text-white bg-teal-500 hover:bg-teal-700 focus:outline-none font-medium rounded-full text-xs px-4 py-2 text-center mb-2" routerLink="/">This Week</button>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2">
+        
+        <div>
+
+        </div>
+        <div class="flex flex-col w-full">
+            <div class="flex justify-start w-full pt-4 pb-4">
+                <div>
+                    <h3 class="text-slate-400 text-sm">Overview</h3>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                @for(block of summaryInfoBlocks; track block.label1) {
+                <app-info-summary [data]="block" class="w-full"></app-info-summary>
+                }
+            </div>
+        </div>
+        
+    </div>
+    
+
+</div>

@@ -6,6 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 import { BudgetComponent } from './components/budget/budget.component';
 import { TeamComponent } from './components/team/team.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { InfoBlockComponent } from './components/home/info-block/info-block.component';
+import { InfoSummaryComponent } from './components/home/info-summary/info-summary.component';
+import { InfoGraphComponent } from './components/home/info-graph/info-graph.component';
 
 
 
@@ -15,7 +18,10 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     HeaderComponent,
     HomeComponent,
     BudgetComponent,
-    TeamComponent
+    TeamComponent,
+    InfoBlockComponent,
+    InfoSummaryComponent,
+    InfoGraphComponent
   ],
   imports: [
     CommonModule,

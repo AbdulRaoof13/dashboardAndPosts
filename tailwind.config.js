@@ -5,7 +5,9 @@ module.exports = {
     "./src/app/home/home.component.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      
+    },
   },
   plugins: [],
 }

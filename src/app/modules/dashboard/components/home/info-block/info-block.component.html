@@ -1,0 +1,15 @@
+<div class=" p-6 bg-slate-800 rounded-lg">
+    <div>
+        <div class="flex justify-between items-center">
+            <h5 class="text-sm text-white">{{data.heading}}</h5>
+            <i class="fas fa-ellipsis-v text-slate-500"></i>
+        </div>
+        <div class="w-full flex flex-col text-center p-6">
+            <h4 class="text-6xl font-bold" [ngClass]="data.accent">{{data.value1}}</h4>
+            <p class="text-sm" [ngClass]="data.accent">{{data.label1}}</p>
+        </div>
+        <div class="w-full text-center text-slate-400">
+            <p class="text-xs">{{data.label2}}: {{data.value2}}</p>
+        </div>
+    </div>
+</div>

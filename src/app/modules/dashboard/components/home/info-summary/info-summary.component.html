@@ -1,0 +1,16 @@
+<div class="flex flex-col">
+    <div class="w-full flex flex-col text-center p-6 bg-slate-700 rounded-lg">
+        <h4 class="text-5xl font-bold" [ngClass]="data.accent">{{data.value1}}</h4>
+        <p class="text-sm" [ngClass]="data.accent">{{data.label1}}</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+        <div class="w-full flex flex-col text-center p-6 bg-slate-700 rounded-lg">
+            <h4 class="text-2xl font-bold text-slate-400">{{data.value2}}</h4>
+            <p class="text-xs text-slate-400">{{data.label2}}</p>
+        </div>
+        <div class="w-full flex flex-col text-center p-6 bg-slate-700 rounded-lg">
+            <h4 class="text-2xl font-bold text-slate-400">{{data.value3}}</h4>
+            <p class="text-xs text-slate-400">{{data.label3}}</p>
+        </div>
+    </div>
+</div>

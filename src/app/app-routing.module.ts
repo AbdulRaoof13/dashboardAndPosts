@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'dashboard', loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'posts', loadChildren: () => import('./modules/posts/posts.module').then(m => m.PostsModule) },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
