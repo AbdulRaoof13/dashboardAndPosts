@@ -9,6 +9,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { InfoBlockComponent } from './components/home/info-block/info-block.component';
 import { InfoSummaryComponent } from './components/home/info-summary/info-summary.component';
 import { InfoGraphComponent } from './components/home/info-graph/info-graph.component';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 
 
@@ -25,7 +26,8 @@ import { InfoGraphComponent } from './components/home/info-graph/info-graph.comp
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    NgApexchartsModule
   ]
 })
 export class DashboardModule { }

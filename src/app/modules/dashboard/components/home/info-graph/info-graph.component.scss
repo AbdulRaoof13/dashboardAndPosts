@@ -1,0 +1,26 @@
+::ng-deep.apexcharts-legend {
+    display: none !important;
+}
+
+::ng-deep.apexcharts-xaxis-label {
+    fill: #94A3B8 !important;
+}
+
+::ng-deep.apexcharts-gridline {
+    opacity: 0.1;
+}
+
+::ng-deep.apexcharts-xaxis-tick {
+    visibility: hidden;
+}
+
+::ng-deep .apexcharts-grid-borders {
+    line:last-child {
+        opacity: 0.1;
+    }
+}
+
+::ng-deep div:has(.apexcharts-canvas) {
+    min-height: 0px !important;
+}
+

@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  data:string = 'this'
+
   topInfoBlocks = [
     { heading: 'Summary', label1: 'Due Tasks', value1: 21, label2: 'Completed', value2: 13, accent: 'cool' },
     { heading: 'Overdue', label1: 'Tasks', value1: 17, label2: 'From yesterday', value2: 9, accent: 'negative' },
