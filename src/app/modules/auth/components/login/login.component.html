@@ -1,0 +1,32 @@
+<div class="flex w-full h-screen justify-center text-center items-center pattern-bg">
+    
+    <div class="w-11/12 md:w-4/5 lg:w-2/4 h-auto bg-slate-800 p-6">
+        <div class="flex w-full justify-center align-baseline pt-2 pb-3">
+            <img src="../../../../../assets/images/owl3.png" alt="owl post logo" class="w-10 h-10 md:w-14 md:h-14"
+                style="margin-right: .5em;">
+            <h1
+                class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl dark:text-white">
+                Owler</h1>
+        </div>
+        <h2 class="pb-7 text-2xl text-white font-bold">Login</h2>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="flex flex-col justify-center">
+            <div class="pb-3">
+                <input class="text-m text-white bg-slate-700 border rounded leading-5 py-3 px-3 border-gray-200 hover:border-gray-300 focus:border-teal-300 shadow-sm placeholder-gray-300 focus:ring-0 w-full" 
+                type="text" placeholder="Enter your name" name="username" ngModel required/>
+            </div>
+            <div class="pb-3">
+                <input class="text-m text-white bg-slate-700 border rounded leading-5 py-3 px-3 border-gray-200 hover:border-gray-300 focus:border-teal-300 shadow-sm placeholder-gray-300 focus:ring-0 w-full"
+                 type="password" id="password" placeholder="Enter your password" name="password" required
+                    ngModel />
+                <!-- <span class="material-symbols-outlined" id="eye" onclick="toggle()">visibility_off</span> -->
+            </div>
+            <div class="pb-3">
+                <button class="text-lg text-white bg-teal-400 border rounded leading-5 py-3 px-3 text-center border-teal-200 hover:border-teal-300 shadow-sm w-full" type="submit">Submit</button>
+            </div>
+            <div class="pb-2 text-teal-400 text-sm">
+                <span (click)="forgot()" class="cursor-pointer">Forget your password?</span>
+            </div>
+        </form>
+    </div>
+</div>
+<p-toast></p-toast>

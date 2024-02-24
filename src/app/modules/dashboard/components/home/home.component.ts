@@ -17,8 +17,8 @@ export class HomeComponent {
   ]
 
   summaryInfoBlocks = [
-    { label1: 'New Issues', value1: 214, label2: 'Fixed', value2: 3, label3: "Won't fix", value3: 4, accent:'violet' },
-    { label1: 'Closed', value1: 75, label2: 'Re-opened', value2: 8, label3: 'Needs Triage', value3: 6, accent: 'positive' }
+    { label1: 'New Issues', value1: 214, label2: 'Fixed', value2: 3, label3: "Won't fix", value3: 4, accent1:'violet', accent2:'positive', accent3:'negative' },
+    { label1: 'Closed', value1: 75, label2: 'Re-opened', value2: 8, label3: 'Needs Triage', value3: 6, accent1: 'positive' , accent2:'cool', accent3:'negative'  }
   ]
 
 }
